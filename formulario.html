@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <style>
+    /* Estilos CSS para mejorar la apariencia de la página */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6e6fa; /* Fondo lila */
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    header img {
+      max-width: 200px; /* Tamaño del logo */
+      height: auto;
+      margin-left: 10px; /* Espacio desde la izquierda */
+    }
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: box-shadow 0.3s ease; /* Transición para la sombra */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+      display: inline-block;
+    }
+    nav a:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+    }
+.contenedor {
+            position: fixed; /* Fijar la posición */
+            top: 0; /* Posición desde arriba */
+            left: 0; /* Posición desde la izquierda */
+            width: 100%; /* Ancho completo */
+            background-color: #f1f1f1; /* Color de fondo */
+            padding: 10px; /* Espaciado interno */
+            z-index: 1000; /* Z-index para asegurar que esté por encima de otros elementos */
+        }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    footer button {
+      background-color:#F8F9F9 ;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición para el color de fondo y la sombra */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+    }
+    footer button:hover {
+      background-color: #D2B4DE;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    section {
+      background-color:#F8F9F9;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    }
+    section h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    section p {
+      color: #666;
+    }
+    .product-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .product-card {
+      width: 300px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .product-card h4 {
+      margin-top: 10px;
+      color: #333;
+    }
+    .product-card p {
+      color: #666;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #formulario, #datos-enviados {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #datos-enviados {
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+  </style>
+
+
+
+</head>
+<body>
+
+<div id="formulario">
+
+    <nav>
+    <a href="INDEX.HTML">INICIO</a>
+    <a href="BASKETBALL.HTML">BASKETBALL</a>
+    <a href="VOLEIBOL.HTML">VOLEIBOL</a>
+    <a href="NATACION.html">NATACION</a>
+    <a href="h.html">FUTBOL</a>
+  </nav>
+
+
+    <form id="form">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono"><br>
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+ <nav>
+   <p>Derechos de autor &copy; 2024 ASANA. Todos los derechos reservados.</p>
+    <div id="map"></div>
+    <a href="servicios.html">Servicios</a>
+    <a href="contacto.html">Contáctanos</a>
+  </nav>
+</div>
+
+<div id="datos-enviados"></div>
+
+    
+<script>
+document.getElementById("form").addEventListener("submit", function(event){
+    event.preventDefault(); 
+    
+
+    var nombre = document.getElementById("nombre").value;
+    var telefono = document.getElementById("telefono").value;
+    var email = document.getElementById("email").value;
+    var mensaje = document.getElementById("mensaje").value;
+    
+
+    var tabla = "<h2>Datos del formulario enviado:</h2><table>";
+    tabla += "<tr><th>Campo</th><th>Valor</th></tr>";
+    tabla += "<tr><td>Nombre</td><td>" + nombre + "</td></tr>";
+    tabla += "<tr><td>Teléfono</td><td>" + telefono + "</td></tr>";
+    tabla += "<tr><td>Correo electrónico</td><td>" + email + "</td></tr>";
+    tabla += "<tr><td>Mensaje</td><td>" + mensaje + "</td></tr>";
+    tabla += "</table>";
+     
+   
+    document.getElementById("formulario").style.display = "none";
+    
+ 
+    var datosEnviados = document.getElementById("datos-enviados");
+    datosEnviados.innerHTML = tabla;
+    datosEnviados.style.display = "block";
+});
+
+ </script>
+
+
+</body>
+</html>

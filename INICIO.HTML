@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ropa Deportiva</title>
+  <style>
+    /* Estilos CSS para mejorar la apariencia de la página */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6e6fa; /* Fondo lila */
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    header img {
+      max-width: 200px; /* Tamaño del logo */
+      height: auto;
+      margin-left: 10px; /* Espacio desde la izquierda */
+    }
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: box-shadow 0.3s ease; /* Transición para la sombra */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+      display: inline-block;
+    }
+    nav a:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    footer button {
+      background-color:#F8F9F9 ;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición para el color de fondo y la sombra */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+    }
+    footer button:hover {
+      background-color: #D2B4DE;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    section {
+      background-color:#F8F9F9;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    }
+    section h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    section p {
+      color: #666;
+    }
+    .product-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .product-card {
+      width: 300px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .product-card h4 {
+      margin-top: 10px;
+      color: #333;
+    }
+    .product-card p {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+<center>
+    <img src="logo asa.png" alt="Logo de ASANA">
+</center>
+  </header>
+  
+  <nav>
+    <a href="BASKETBALL.HTML">BASKETBALL</a>
+    <a href="VOLEIBOL.HTML">VOLEIBOL</a>
+    <a href="NATACION.html">NATACION</a>
+    <a href="h.html">FUTBOL</a>
+  </nav>
+  
+  <main>
+    <h2>Productos Destacados</h2>
+    <div class="product-container">
+      <div class="product-card">
+        <img src="1fut.jpg" alt="Calzado Deportivo">
+        <h4>Calzado Deportivo</h4>
+        <p>Este calzado ofrece comodidad y estilo para tus entrenamientos diarios.</p>
+      </div>
+      <div class="product-card">
+        <img src="2basket.jpg" alt="Ropa Deportiva">
+        <h4>Ropa Deportiva</h4>
+        <p>Conjunto de ropa deportiva diseñado para un rendimiento óptimo.</p>
+      </div>
+      <div class="product-card">
+        <img src="7voli.jpg" alt="Accesorios">
+        <h4>Accesorios</h4>
+        <p>Una selección de accesorios esenciales para tu rutina de ejercicio.</p>
+      </div>
+    </div>
+  </main>
+  
+  <nav>
+       <p>Derechos de autor &copy; 2024 ASANA. Todos los derechos reservados.</p>
+
+    <div id="map"></div>
+    <a href="SERVICIOS.html">SERVICIOS</a>
+    <a href="FORMULARIO.html">FORMULARIO</a>
+    <a href="CONTACTO.html">CONTACTANOS</a>
+  </nav>
+  
+  <script>
+    // Código JavaScript para cargar un mapa de Google Maps
+    function initMap() {
+      var location = {lat: 40.7128, lng: -74.0060}; // Coordenadas de Nueva York
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: location
+      });
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
+

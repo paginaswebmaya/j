@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlazar archivo de estilos CSS -->
+    <style>
+        /* Estilos CSS para mejorar la apariencia de la página */
+        body {
+            font-family: Bell MT, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('11fut.jpg'); /* Cambiar 'background_image.jpg' por la ruta de tu imagen de fondo */
+            background-size: cover; /* Ajustar la imagen al tamaño de la ventana */
+            background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+            background-position: center; /* Posicionar la imagen en el centro */
+        }
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: box-shadow 0.3s ease; /* Transición para la sombra */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+      display: inline-block;
+    }
+    nav a:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+    }
+
+        #carrito {
+            background-color: #f9f9f9;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            padding: 10px;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 999;
+            display: none;
+        }
+        #carrito.visible {
+            display: block;
+        }
+        #carrito-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #carrito-list li {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        #carrito-list li img {
+            max-width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+        #carrito-list li .product-info {
+            flex: 1;
+        }
+        #carrito-list li .product-name {
+            font-weight: bold;
+            color: black;
+        }
+        #carrito-list li .product-price {
+            color: black; /* Precio en color negro */
+        }
+        #total {
+            background-color: #333;
+            border-radius: 5px;
+            color: white;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+       .product-card {
+    width: calc(15% - 10px); /* Ajustar el ancho para cuatro productos por fila con espacio entre ellos */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra estática */
+    transition: transform 0.3s ease; /* Transición suave */
+    margin-bottom: 10px; /* Reducir el margen inferior para disminuir la separación entre productos */
+    text-align: center;
+    border: 2px solid #ddd; /* Añad        }
+        .product-card:hover {
+            transform: translateY(-5px); /* Efecto de levantamiento al pasar el cursor */
+        }
+        .product-card img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 5px;
+            margin: 0 auto 10px; /* Centrar la imagen y dar espacio en la parte inferior */
+            display: block;
+        }
+        .product-card h3 {
+            margin-top: 10px;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .product-card p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .buy-button {
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+            padding: 5px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Transición para el color de fondo */
+        }
+        .buy-button:hover {
+            background-color: #45a049; /* Cambio de color al pasar el cursor */
+        }
+        .remove-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Transición para el color de fondo */
+        }
+        .remove-button:hover {
+            background-color: #d32f2f; /* Cambio de color al pasar el cursor */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+
+<img src="logo asa.png" alt="Logo de ASANA">
+ <nav>
+    <a href="INICIO.HTML">INICIO</a>
+    <a href="VOLEIBOL.HTML">VOLEIBOL</a>
+    <a href="NATACION.HTML">NATACION</a>
+ 
+    <a href="BASKETBALL.html">BASKETBALL</a>
+  </nav>
+
+        <button id="boton-carrito" onclick="mostrarCarritoDetallado()">&#9776;</button>
+        <div id="carrito">
+            Carrito de compras: <span id="carrito-items">0</span>
+            <ul id="carrito-list"></ul>
+            <div id="total"></div>
+        </div>
+    </header>
+
+    <!-- Productos -->
+    <div class="product-container">
+        <!-- Producto 1 -->
+        <div class="product-card">
+            <img src="1futbol.jpg" alt="Zapatos de fútbol Adidas">
+            <h3>Zapatos de fútbol Adidas</h3>
+            <p>Precio: $2000.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(1, 'Zapatos de fútbol Adidas', '1futbol.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product-card">
+            <img src="2fut.jpg" alt="Camiseta de fútbol Adidas">
+            <h3>Camiseta de fútbol Adidas</h3>
+            <p>Precio: $800.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(2, 'Camiseta de fútbol Adidas', '2fut.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product-card">
+            <img src="3fut.jpg" alt="Balón de fútbol Adidas">
+            <h3>Balón de fútbol Adidas</h3>
+            <p>Precio: $400.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(3, 'Balón de fútbol Adidas', '3fut.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product-card">
+            <img src="4fut.jpg" alt="Guantes de portero Adidas">
+            <h3>Guantes de portero Adidas</h3>
+            <p>Precio: $600.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(4, 'Guantes de portero Adidas', '4fut.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 5 -->
+        <div class="product-card">
+            <img src="5fut.jpg" alt="Medias de fútbol Adidas">
+            <h3>Medias de fútbol Adidas</h3>
+            <p>Precio: $100.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(5, 'Medias de fútbol Adidas', '5fut.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 6 -->
+        <div class="product-card">
+            <img src="6fut.jpg" alt="Espinilleras Adidas">
+            <h3>Espinilleras Adidas</h3>
+            <p>Precio: $700.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(6, 'Espinilleras Adidas', '6fut.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 7 -->
+        <div class="product-card">
+            <img src="7fut.jpg" alt="Chaqueta de fútbol Adidas">
+            <h3>Chaqueta de fútbol Adidas</h3>
+            <p>Precio: $500.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(7, 'Chaqueta de fútbol Adidas', '7fut.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 8 -->
+        <div class="product-card">
+            <img src="8fut.jpg" alt="Pants de fútbol Adidas">
+            <h3>Pants de fútbol Adidas</h3>
+            <p>Precio: $150.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(8, 'Pants de fútbol Adidas', '8fut.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 9 -->
+        <div class="product-card">
+            <img src="9fut.jpg" alt="Mochila de fútbol Adidas">
+            <h3>Mochila de fútbol Adidas</h3>
+            <p>Precio: $1200.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(9, 'Mochila de fútbol Adidas', '9fut.jpg')">Comprar</button>
+        </div>
+        <!-- Producto 10 -->
+        <div class="product-card">
+            <img src="10 fut.jpg" alt="Banda para sudor Adidas">
+            <h3>Banda para sudor Adidas</h3>
+            <p>Precio: $300.00</p>
+            <button class="buy-button" onclick="agregarAlCarrito(10, 'Banda para sudor Adidas', '10 fut.jpg')">Comprar</button>
+        </div>
+    </div>
+
+    <script>
+        var carrito = []; // Arreglo para almacenar los productos del carrito
+
+        function agregarAlCarrito(id, nombre, imagen) {
+            var producto = {
+                id: id,
+                nombre: nombre,
+                imagen: imagen,
+                precio: getPrecioProducto(id)
+            };
+
+            carrito.push(producto); // Agregar el producto al carrito
+            actualizarCarrito(); // Actualizar la visualización del carrito
+        }
+
+        function getPrecioProducto(id) {
+            // Función para obtener el precio del producto según su ID (podría ser una base de datos o una lista de precios)
+            // Aquí se simula una lista de precios para los productos de fútbol
+            var precios = {
+                1: 2000,
+                2: 800,
+                3: 400,
+                4: 600,
+                5: 100,
+                6: 700,
+                7: 500,
+                8: 150,
+                9: 1200,
+                10: 300
+            };
+            return precios[id];
+        }
+
+        function mostrarCarritoDetallado() {
+            var carritoElement = document.getElementById('carrito');
+            if (carritoElement.classList.contains('visible')) {
+                carritoElement.classList.remove('visible');
+            } else {
+                carritoElement.classList.add('visible');
+            }
+        }
+
+        function actualizarCarrito() {
+            var carritoList = document.getElementById('carrito-list');
+            var totalElement = document.getElementById('total');
+            var total = 0;
+
+            // Limpiar la lista actual del carrito
+            carritoList.innerHTML = '';
+
+            // Recorrer todos los productos en el carrito
+            carrito.forEach(function(producto) {
+                // Crear elementos HTML para cada producto en el carrito
+                var li = document.createElement('li');
+                var img = document.createElement('img');
+                img.src = producto.imagen;
+                img.alt = producto.nombre;
+                var productInfo = document.createElement('div');
+                productInfo.classList.add('product-info');
+                var productName = document.createElement('span');
+                productName.classList.add('product-name');
+                productName.textContent = producto.nombre;
+                var productPrice = document.createElement('span');
+                productPrice.classList.add('product-price');
+                productPrice.textContent = '$' + producto.precio.toFixed(2);
+                var removeButton = document.createElement('button');
+                removeButton.classList.add('remove-button');
+                removeButton.textContent = 'Eliminar';
+                removeButton.onclick = function() {
+                    eliminarDelCarrito(producto.id);
+                };
+
+                // Agregar los elementos creados al elemento <li> y luego al carrito
+                productInfo.appendChild(productName);
+                productInfo.appendChild(productPrice);
+                li.appendChild(img);
+                li.appendChild(productInfo);
+                li.appendChild(removeButton);
+                carritoList.appendChild(li);
+
+                // Calcular el total
+                total += producto.precio;
+            });
+
+            // Actualizar el contador de elementos en el carrito
+            document.getElementById('carrito-items').textContent = carrito.length;
+
+            // Mostrar el total
+            totalElement.textContent = 'Total: $' + total.toFixed(2);
+        }
+
+        function eliminarDelCarrito(id) {
+            // Buscar la primera instancia del producto en el carrito y eliminarla
+            for (var i = 0; i < carrito.length; i++) {
+                if (carrito[i].id === id) {
+                    carrito.splice(i, 1); // Eliminar el producto del arreglo
+                    break; // Salir del bucle una vez que se haya eliminado el producto
+                }
+            }
+            actualizarCarrito(); // Actualizar la visualización del carrito después de eliminar un producto
+        }
+    </script>
+<nav>
+    <p>Derechos de autor &copy; 2024 ASANA. Todos los derechos reservados.</p>
+    <div id="map"></div>
+    <a href="servicios.html">SERVICIOS</a>
+    <a href="formulario.html">FORMULARIO</a>
+    <a href="contacto.html">CONTACTANOS</a>
+  </nav>
+
+</body>
+</html>
+
+                   
